@@ -8,7 +8,7 @@ Window
     id: root
     width: Constants.width
     height: Constants.height + toolBar.height
-    title: qsTr('Lesson 01')
+    title: qsTr('Square - exercises 2 & 3 from lesson 01')
     visible: true
 
     ToolBar
