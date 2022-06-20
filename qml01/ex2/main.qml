@@ -16,7 +16,7 @@ Window {
 
         const p = (a + b + c) / 2
         const s = Math.sqrt(p * (p - a) * (p - b) * (p - c))
-        const res = Math.round(s * 100) / 100
+        const res = Math.round((s + Number.EPSILON) * 100) / 100
 
         result.value = Number.isNaN(res) ? 'undefined' : res
     }
