@@ -1,0 +1,43 @@
+QMainWindow
+{
+    background-color: #e5ecef;
+}
+
+QFrame
+{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+QPushButton
+{
+    border-radius: 0px;
+    background-color: #f6f6f6;
+}
+
+QPushButton:pressed
+{
+    border-radius: 0px;
+    background-color: #bbbbbb;
+}
+
+QPushButton:hover:!pressed
+{
+    border-radius: 0px;
+    background-color: #d6d6d6;
+}
+
+QLineEdit
+{
+    border-radius: 0px;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+}
+
+CustomLineEdit
+{
+    border-radius: 0px;
+    border: 1px solid lightgray;
+    padding-left: 10px;
+}
