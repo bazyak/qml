@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/ex1">
+        <file>CustomTextField.qml</file>
+    </qresource>
+</RCC>
