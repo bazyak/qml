@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/square">
+        <file>Screen02.qml</file>
+        <file>Screen03.qml</file>
+        <file>Screen01.qml</file>
+        <file>CustomItemDelegate.qml</file>
+        <file>CustomTextField.qml</file>
+    </qresource>
+</RCC>
