@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/ex1">
+        <file>LoginForm.qml</file>
+        <file>LoggedForm.qml</file>
+        <file>SearchForm.qml</file>
+        <file>FinishForm.qml</file>
+        <file>CustomBusyIndicator.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/ex3">
+        <file>SortListModel.qml</file>
+    </qresource>
+    <qresource prefix="/data">
+        <file>books.json</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>img/01.png</file>
+        <file>img/02.png</file>
+        <file>img/03.png</file>
+        <file>img/04.png</file>
+        <file>img/05.png</file>
+        <file>img/06.png</file>
+    </qresource>
+</RCC>
