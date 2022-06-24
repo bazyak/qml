@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/ex1">
+    <qresource prefix="/ex1-2">
         <file>LoginForm.qml</file>
         <file>LoggedForm.qml</file>
         <file>SearchForm.qml</file>
