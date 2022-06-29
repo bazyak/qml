@@ -8,7 +8,7 @@ import "js/PaintFuncs.js" as Painter
 
 Window
 {
-    readonly property int kModelCount: 8
+    readonly property int kModelCount: 7
     readonly property int kInputWidth: 80
     readonly property int kRowHeight: 40
     readonly property int kChartSpace: 120
