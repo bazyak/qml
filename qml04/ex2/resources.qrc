@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>js/PaintFuncs.js</file>
+        <file>main.qml</file>
+        <file>qml/CustomTextField.qml</file>
+    </qresource>
+</RCC>
