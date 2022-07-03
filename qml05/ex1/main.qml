@@ -8,11 +8,13 @@ Window
     readonly property int kComboBoxHeight: 40
     readonly property int kWidth: 640
     readonly property int kHeight: kWidth + kComboBoxHeight + kSpacing
+    readonly property int kLineWidth: 1 + shapeScale * 14
     readonly property string kWindowTitle: qsTr('Lesson 05 - Exercise 1')
     readonly property color kLineColor: 'darkturquoise'
-    readonly property int kLineWidth: 15
     readonly property variant kModelKeys: ['Звёздочка', 'Кольцо', 'Домик', 'Песочные часы']
     readonly property variant kModelValues: ['star', 'circle', 'house', 'sandglass']
+
+    property double shapeScale: 1
 
     width: kWidth
     height: kHeight
@@ -73,7 +75,7 @@ Window
                     ctx.clearRect(0, 0, width, height)
                     ctx.lineJoin = 'round'
                     ctx.beginPath()
-                    const points = Magic.getShape(shapeType.currentValue, canvas.canvasSize);
+                    const points = Magic.getShape(shapeType.currentValue, canvas.canvasSize, shapeScale);
                     for (const [i, point] of points.entries())
                     {
                         const funcName = !i ? 'moveTo' : 'lineTo'

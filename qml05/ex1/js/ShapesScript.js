@@ -1,11 +1,14 @@
-const kStepDivider = 5
+const kStepDividerMin = 4
+const kStepDividerMax = 15
 
-function getShape(type, size)
+function getShape(type, size, shapeScale)
 {
+    const scale = shapeScale > 1 ? 1 : shapeScale < 0 ? 0 : shapeScale
     const minSide = Math.min(size.width, size.height)
     const xCenter = size.width / 2
     const yCenter = size.height / 2
-    const step = minSide / Math.max(kStepDivider, 4)
+    const divider = kStepDividerMin + (1 - scale) * (kStepDividerMax - kStepDividerMin)
+    const step = !shapeScale ? 0 : minSide / divider
 
     return eval(type + '(xCenter, yCenter, step)')
 }

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/CustomBusyIndicator.qml</file>
+        <file>qml/FinishForm.qml</file>
+        <file>qml/LoggedForm.qml</file>
+        <file>qml/LoginForm.qml</file>
+        <file>qml/SearchForm.qml</file>
+        <file>main.qml</file>
+        <file>js/CompsCreater.js</file>
+    </qresource>
+</RCC>
