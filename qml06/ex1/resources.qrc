@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>qml/Constants/Constants.qml</file>
+        <file>qml/Constants/qmldir</file>
+        <file>qml/SortListModel.qml</file>
+        <file>js/FetchBrakingBad.js</file>
+        <file>qml/CustomComboBox.qml</file>
+        <file>qml/CustomLabel.qml</file>
+        <file>qml/CharacterInfo.qml</file>
     </qresource>
 </RCC>
