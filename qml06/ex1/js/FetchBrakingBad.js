@@ -54,10 +54,45 @@ function deathsCount(json, count)
 
 function quotes(json, object)
 {
+    object.text = ''
     var items = []
     for (const quote of json)
     {
         items.push('- ' + quote.quote)
     }
     object.text = items.join('\n')
+}
+
+function character(json, object)
+{
+    object.photo = ''
+    object.nickname = ''
+    object.birthday = ''
+    object.status = ''
+    object.occupation = ''
+    if (json.length)
+    {
+        var items = []
+        for (const occ of json[0].occupation)
+        {
+            items.push(occ)
+        }
+        object.photo = json[0].img
+        object.nickname = json[0].nickname
+        object.birthday = json[0].birthday
+        object.status = json[0].status
+        object.occupation = items.join(', ')
+    }
+}
+
+function death(json, object)
+{
+    object.text = ''
+    if (json.length)
+    {
+        object.text += Constants.kInfoDialogCausePrefixText + json[0].cause + '\n'
+        object.text += Constants.kInfoDialogResponsiblePrefixText + json[0].responsible + '\n'
+        object.text += Constants.kInfoDialogLastWordsPrefixText + json[0].last_words + '\n'
+        object.text += Constants.kInfoDialogEpisodePrefixText + json[0].season + '.' + json[0].episode
+    }
 }

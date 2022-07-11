@@ -9,6 +9,10 @@ Window
     id: root
     width: Constants.kWidth
     height: Constants.kHeight
+    minimumWidth: width
+    minimumHeight: height
+    maximumWidth: width
+    maximumHeight: height
     visible: true
     title: Constants.kWindowTitle
 
@@ -30,11 +34,7 @@ Window
         characterInfo.open()
     }
 
-    Component.onCompleted:
-    {
-        showCharacterInfo('Walter White')
-        //seriesSelected(Constants.kSeriesModelList[0])
-    }
+    Component.onCompleted: seriesSelected(Constants.kSeriesModelList[0])
 
     CharacterInfo { id: characterInfo }
 
@@ -142,17 +142,8 @@ Window
 
             Row
             {
-                id: r1
                 anchors.fill: parent
                 spacing: Constants.kSpacing
-
-//                    Image
-//                    {
-//                        source: icon
-//                        fillMode: Image.PreserveAspectFit
-//                        width: parent.width / 4
-//                        height: parent.height
-//                    }
 
                 Column
                 {
@@ -188,7 +179,7 @@ Window
 
                 ListView
                 {
-                    id: characs
+                    id: charactersList
                     spacing: Constants.kCharactersListSpacing
                     anchors.top: parent.top
                     anchors.topMargin: Constants.kSpacing
@@ -201,8 +192,10 @@ Window
 
                     delegate: Rectangle
                     {
-                        width: characs.width
-                        color: characterMouseArea.containsMouse ? 'lightgray' : 'gainsboro'
+                        width: charactersList.width
+                        color: charactersMouseArea.containsMouse
+                               ? Constants.kCharactersListItemColorHovered
+                               : Constants.kCharactersListItemColor
                         height: Constants.kCharactersListItemHeight
                         radius: Constants.kCharactersListItemRadius
 
@@ -218,7 +211,7 @@ Window
 
                         MouseArea
                         {
-                            id: characterMouseArea
+                            id: charactersMouseArea
                             anchors.fill: parent
                             hoverEnabled: true
                             onClicked: showCharacterInfo(name.text)

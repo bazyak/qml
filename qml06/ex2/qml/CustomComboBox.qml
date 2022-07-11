@@ -5,7 +5,19 @@ ComboBox
 {
     id: control
     currentIndex: -1
+    hoverEnabled: true
+
     property int prevIndex: -1
+    property color mainTextColor: 'black'
+    property color mainTextColorHovered: 'black'
+    property color popupTextColor: 'black'
+    property color mainBackgroundColor: 'transparent'
+    property color mainBorderColor: 'lightgray'
+    property color mainBorderColorHovered: 'darkturquoise'
+    property color pipColor: 'lightgray'
+    property color pipColorHovered: 'darkturquoise'
+    property color pipColorPopupVisibled: 'gray'
+    property color popupBorderColor: 'darkturquoise'
 
     signal customActivated(index: int, prevIndex: int)
 
@@ -25,7 +37,7 @@ ComboBox
         {
             text: key
             leftPadding: 10
-            //color: '#21be2b'
+            color: popupTextColor
             font: control.font
             elide: Text.ElideRight
             verticalAlignment: Text.AlignVCenter
@@ -45,7 +57,7 @@ ComboBox
         Connections
         {
             target: control
-            function onPressedChanged() { canvas.requestPaint() }
+            function onHoveredChanged() { canvas.requestPaint() }
         }
 
         onPaint:
@@ -55,7 +67,9 @@ ComboBox
             context.lineTo(width, 0)
             context.lineTo(width / 2, height)
             context.closePath()
-            context.fillStyle = control.hovered ? 'darkturquoise' : 'lightgray'
+            context.fillStyle = control.popup.visible
+                    ? pipColorPopupVisibled
+                    : control.hovered ? pipColorHovered : pipColor
             context.fill()
         }
     }
@@ -67,7 +81,7 @@ ComboBox
 
         text: control.displayText
         font: control.font
-        // color: control.pressed ? '#17a81a' : '#21be2b'
+        color: control.hovered ? mainTextColorHovered : mainTextColor
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
     }
@@ -76,8 +90,9 @@ ComboBox
     {
         implicitWidth: 120
         implicitHeight: 40
-        border.color: control.hovered ? 'darkturquoise' : 'lightgray'
+        border.color: control.hovered ? mainBorderColorHovered : mainBorderColor
         border.width: control.visualFocus ? 2 : 1
+        color: mainBackgroundColor
         radius: 2
     }
 
@@ -87,6 +102,8 @@ ComboBox
         width: control.width
         implicitHeight: contentItem.implicitHeight
         padding: 1
+
+        onVisibleChanged: canvas.requestPaint()
 
         contentItem: ListView
         {
@@ -100,7 +117,7 @@ ComboBox
 
         background: Rectangle
         {
-            border.color: 'lightgray'
+            border.color: popupBorderColor
             radius: 2
         }
     }
