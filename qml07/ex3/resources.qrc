@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/Constants/Constants.qml</file>
+        <file>qml/Constants/qmldir</file>
+        <file>qml/CustomComboBox.qml</file>
+        <file>qml/CustomPopup.qml</file>
+    </qresource>
+</RCC>
