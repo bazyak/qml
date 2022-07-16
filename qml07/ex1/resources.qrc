@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/Constants/Constants.qml</file>
+        <file>qml/Constants/qmldir</file>
+        <file>js/DBEngine.js</file>
+        <file>qml/CustomTextField.qml</file>
+        <file>qml/CustomComboBox.qml</file>
+    </qresource>
+</RCC>
