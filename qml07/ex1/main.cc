@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QDebug>
+// #include <QDebug>
 
 
 int main(int argc, char *argv[])
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-    qDebug() << "Полный путь к бд: " << engine.offlineStorageDatabaseFilePath("storage");
+    // qDebug() << "Полный путь к бд: " << engine.offlineStorageDatabaseFilePath("storage");
     engine.load(url);
 
     return app.exec();
